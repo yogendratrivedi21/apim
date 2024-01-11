@@ -1,0 +1,6 @@
+apimServiceName: apiops-apim-prod
+namedValues:
+loggers:
+diagnostics:
+backends:
+apis:
