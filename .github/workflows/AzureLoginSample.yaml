@@ -1,5 +1,6 @@
-on: [push]
-
+on: 
+ workflow_dispatch:
+    # This event allows manual triggering of the workflow
 name: AzureLoginSample
 
 jobs:
