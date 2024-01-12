@@ -4,7 +4,6 @@ info:
   description: 'A sample API with information related to a technical conference.  The available resources  include *Speakers*, *Sessions* and *Topics*.  A single write operation is available to provide  feedback on a session.'
   version: '1.0'
 servers:
-  - url: http://apiops-apim-dev.azure-api.net/conference
   - url: https://apiops-apim-dev.azure-api.net/conference
 paths:
   /sessions:
@@ -232,6 +231,7 @@ paths:
   '/status/{code}':
     get:
       summary: statuscode
+      description: statuscode
       operationId: statuscode
       parameters:
         - name: code
@@ -241,14 +241,15 @@ paths:
             type: ''
       responses:
         '200':
-          description: 
+          description: ''
   /resource:
     head:
       summary: Retrive Header only
+      description: Retrive Header only
       operationId: retrive-header-only
       responses:
         '200':
-          description: 
+          description: ''
 components:
   schemas:
     Body:
