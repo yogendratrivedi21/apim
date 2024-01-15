@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Demo Conference API
-  description: ' Updated A sample API with information related to a technical conference.  The available resources  include *Speakers*, *Sessions* and *Topics*.  A single write operation is available to provide  feedback on a session.'
+  description: 'A sample API with information related to a technical conference.  The available resources  include *Speakers*, *Sessions* and *Topics*.  A single write operation is available to provide  feedback on a session.'
   version: '1.0'
 servers:
   - url: https://apiops-apim-dev.azure-api.net/conference
