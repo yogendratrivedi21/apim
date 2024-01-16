@@ -1,9 +1,10 @@
 openapi: 3.0.1
 info:
   title: Demo Conference API
-  description: 'AA sample API with information related to a technical conference.  The available resources  include *Speakers*, *Sessions* and *Topics*.  A single write operation is available to provide  feedback on a session.'
+  description: 'A sample API with information related to a technical conference.  The available resources  include *Speakers*, *Sessions* and *Topics*.  A single write operation is available to provide  feedback on a session.'
   version: '1.0'
 servers:
+  - url: http://apiops-apim-dev.azure-api.net/conference
   - url: https://apiops-apim-dev.azure-api.net/conference
 paths:
   /sessions:
@@ -82,7 +83,9 @@ paths:
           text/plain:
             schema:
               $ref: '#/components/schemas/Body'
-            example: ''
+            examples:
+              default:
+                value: 
       responses:
         '200':
           description: OK
@@ -92,7 +95,6 @@ paths:
   /speakers:
     get:
       summary: GetSpeakers
-      description: GetSpeakers
       operationId: GetSpeakers
       parameters:
         - name: dayno
@@ -112,7 +114,6 @@ paths:
   '/speaker/{id}':
     get:
       summary: GetSpeaker
-      description: GetSpeaker
       operationId: GetSpeaker
       parameters:
         - name: id
@@ -130,7 +131,6 @@ paths:
   '/speaker/{id}/sessions':
     get:
       summary: GetSpeakerSessions
-      description: GetSpeakerSessions
       operationId: GetSpeakerSessions
       parameters:
         - name: id
@@ -147,7 +147,6 @@ paths:
   '/speaker/{id}/topics':
     get:
       summary: GetSpeakerTopics
-      description: GetSpeakerTopics
       operationId: GetSpeakerTopics
       parameters:
         - name: id
@@ -164,7 +163,6 @@ paths:
   /topics:
     get:
       summary: GetTopics
-      description: GetTopics
       operationId: GetTopics
       parameters:
         - name: dayno
@@ -180,7 +178,6 @@ paths:
   '/topic/{id}':
     get:
       summary: GetTopic
-      description: GetTopic
       operationId: GetTopic
       parameters:
         - name: id
@@ -197,7 +194,6 @@ paths:
   '/topic/{id}/speakers':
     get:
       summary: GetTopicSpeakers
-      description: GetTopicSpeakers
       operationId: GetTopicSpeakers
       parameters:
         - name: id
@@ -214,7 +210,6 @@ paths:
   '/topic/{id}/sessions':
     get:
       summary: GetTopicSessions
-      description: GetTopicSessions
       operationId: GetTopicSessions
       parameters:
         - name: id
@@ -228,28 +223,6 @@ paths:
           description: OK
           content:
             application/vnd.collection+json: { }
-  '/status/{code}':
-    get:
-      summary: statuscode
-      description: statuscode
-      operationId: statuscode
-      parameters:
-        - name: code
-          in: path
-          required: true
-          schema:
-            type: ''
-      responses:
-        '200':
-          description: ''
-  /resource:
-    head:
-      summary: Retrive Header only
-      description: Retrive Header only
-      operationId: retrive-header-only
-      responses:
-        '200':
-          description: ''
 components:
   schemas:
     Body:
